@@ -11,6 +11,27 @@ POC and exploration for rapid agentic prototyping using OpenAI Codex. This was b
 
 FastAPI service that pulls the Bundesbank time series **BBIN1.M.D0.ECB.ECBMIN.EUR.ME**, cleans it with DuckDB, and produces a 12-period univariate forecast. The output is a single CSV table with actuals (`ACT`) followed by forecasts (`FCT`).
 
+## Cost And ROI (Rough Estimate)
+
+Assumptions:
+- OpenAI pricing (gpt-5.2-codex): $1.75 / 1M input tokens, $0.175 / 1M cached input tokens, $14.00 / 1M output tokens.
+- Token split: 75k total tokens, assumed 50% input / 50% output, with 50% of input cached.
+- Exchange rate: 1 EUR = 1.1855 USD (assumption for calculation).
+- Labor rate: EUR 100/hour.
+
+Estimate:
+- Token cost: ~EUR 0.47.
+- Operator time: ~1 hour -> EUR 100.
+- AI-assisted total: ~EUR 100.47.
+
+Traditional build estimate:
+- 1 engineer, ~4 working days (32 hours) -> ~EUR 3,200.
+
+Economic impact:
+- Cost reduction: ~EUR 3.1k saved.
+- Productivity gain: ~32x faster (32 hours -> 1 hour).
+- Cost efficiency: ~32x cheaper (EUR 3,200 -> EUR 100.47).
+
 ## Architecture (High Level)
 
 ```mermaid
